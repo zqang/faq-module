@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="submit" [disabled]="!categoryForm.valid" class="btn btn-success">Save</button>
+                    <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input formControlName="name" type="text" id="name" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12" formArrayName="qnaList">
+                    <div 
+                    class="row"
+                    *ngFor="let qnaListCtrl of controls; let i = index"
+                    [formGroupName]="i">
+                        <div class="col-xs-12">
+                            <label for="question">Question</label>
+                            <input 
+                            type="text" 
+                            id="question" 
+                            class="form-control"
+                            formControlName="question">
+                        </div>
+                        <div class="col-xs-12">
+                            <label for="answer">Answer</label>
+                            <input 
+                            type="text" 
+                            id="answer" 
+                            class="form-control"
+                            formControlName="answer">
+                        </div>
+                        <div class="col-xs-12">
+                            <button 
+                            class="btn btn-danger"
+                            type="button"
+                            (click)="onDeleteQna(i)">Delete</button>
+                        </div>
+                    </div>  
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <button class="btn btn-success" type="button" (click)="onAddQna()">Add Question</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

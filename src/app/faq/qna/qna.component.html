@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button 
+        (click)="onEditCategory()" 
+        class="btn btn-primary" >Edit Category</button>
+        <button 
+        (click)="onDeleteCategory()" 
+        class="btn btn-danger" >Delete Category</button>
+    </div>
+</div>
+
+<div class="row">
+<hr>
+    <div class="col-xs-12">
+        <ul class="list-group">
+            <a class="list-group-item" *ngFor="let qna of category.qnaList; let i = index" 
+            (click)="onEditQuestion(i)">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1>{{qna.question}}</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p>{{qna.answer}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <button (click)="onEditQuestion(i)" class="btn btn-primary" >Edit</button>
+                        <button style="cursor: pointer;" class="btn btn-danger" type="button">Delete</button>
+                    </div>
+                </div>
+            </a>
+        </ul>
+    </div>
+</div>
+
+<app-edit></app-edit>
+

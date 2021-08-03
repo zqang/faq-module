@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-xs-12">
+        <a 
+        [routerLink] = "[i, 'questions']"
+        routerLinkActive="active"
+        style="cursor: pointer;"
+        class="list-group-item clearfix"
+        *ngFor="let category of categories; let i = index">
+            <div>
+                <h4 class="list-group-item-heading">{{category.name}}</h4>
+            </div>
+        </a>
+    </div>
+</div>
+
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <router-outlet></router-outlet>
+    </div>
+</div>

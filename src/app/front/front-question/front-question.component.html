@@ -1,0 +1,19 @@
+<div class="row">
+    <hr>
+    <div class="col-xs-12">
+        <ul class="list-group">
+            <div class="list-group-item" *ngFor="let qna of category.qnaList; let i = index">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1>{{qna.question}}</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p>{{qna.answer}}</p>
+                    </div>
+                </div>
+            </div>
+        </ul>
+    </div>
+</div>
